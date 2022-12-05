@@ -1,0 +1,40 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+     
+
+<html lang="en">
+
+  <div class="sidebar">
+      <body class="container">
+      <button class="nav-btn" onclick="navOpen()">
+        <span class="nav-button-line"></span>
+        <span class="nav-button-line"></span>
+        <span class="nav-button-line"></span>
+      </button>
+      {# #}
+        {% include 'menu.twig' %}
+    </div>
+
+
+    <section id="content" role="main" class="content-wrapper">
+      {% block content %}
+        
+      {% endblock %}
+
+    
+    </section>
+
+  <script src="../assets/js/app.js"></script>
+
+
+
+{%  block footer %}
+{% include 'footer.twig' %}
+{% endblock %}
+</body>
+</html>
