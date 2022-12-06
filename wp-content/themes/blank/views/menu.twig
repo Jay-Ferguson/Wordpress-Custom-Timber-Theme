@@ -1,7 +1,7 @@
 {# menu logic for rendering submenu items #}
 
 <nav>
-     <ul class="nav-main">
+     <ul class="nav-main nav__main-hidden">
          {% for item in menu.items %}
          {% if item.children %}
           <li>{{item.title}}
@@ -10,8 +10,8 @@
                {% endfor %}
           </li>
      {% else %}
-             <li class="nav-main-item {{ item.classes|join(' ') }}">
-                 <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+             <li class="nav__main-item {{ item.classes|join(' ') }}">
+                 <a class="nav__main-link" href="{{ item.link }}">{{ item.title }}</a>
                  <!-- ... -->
              </li>
           {% endif %}
