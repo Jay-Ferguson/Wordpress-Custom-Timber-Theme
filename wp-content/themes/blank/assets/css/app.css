@@ -26,7 +26,6 @@ body {
 #content {
   display: grid;
   grid-column: full-start/full-end;
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [full-start] minmax(0rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 
@@ -47,7 +46,11 @@ body {
   }
 }
 
-.heading-4, .heading-3, .heading-2, .heading-1 {
+p {
+  font-size: 1.5rem;
+}
+
+.heading-post, .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
 }
@@ -86,6 +89,12 @@ body {
   color: #54483A;
 }
 
+.heading-post {
+  font-size: 4rem;
+  color: #6D5D4B;
+  margin-bottom: 1rem;
+}
+
 .btn {
   background-color: #f4af5a;
   color: #fff;
@@ -116,6 +125,12 @@ body {
 
 .mb-hg {
   margin-bottom: 8rem;
+}
+
+.article-h1 {
+  font-size: size 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .sidebar {
@@ -250,6 +265,8 @@ body {
   max-height: 2.5rem;
   max-width: 100%;
   filter: brightness(70%);
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .realtors {
@@ -269,7 +286,7 @@ body {
 }
 .realtors__list {
   display: grid;
-  grid-template-columns: min-content max-content;
+  grid-template-columns: 25% 75%;
   grid-column-gap: 2rem;
   grid-row-gap: 5vh;
   align-items: center;
@@ -332,6 +349,11 @@ body {
 }
 .feature__text {
   font-size: 1.7rem;
+}
+
+.post__content-container {
+  grid-column: 3/6;
+  grid-row: 2;
 }
 
 .story__pictures {
@@ -544,6 +566,7 @@ body {
   background-color: #14102c;
   grid-column: full-start/full-end;
   padding: 8rem;
+  grid-row: 5;
 }
 
 .nav {

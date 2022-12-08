@@ -1,5 +1,7 @@
 
-
+p{
+    font-size:1.5rem;
+}
 
 %heading {
     font-family: $font-display;
@@ -38,6 +40,13 @@
     &--dark { color: $color-grey-dark-1; }
 }
 
+.heading-post {
+    @extend %heading;
+    font-size:4rem;
+    color:$color-grey-dark-2;
+    margin-bottom:1rem;
+}
+
 .btn {
     background-color: $color-primary;
     color: #fff;
@@ -59,3 +68,10 @@
 .mb-md { margin-bottom: 3rem; }
 .mb-lg { margin-bottom: 4rem; }
 .mb-hg { margin-bottom: 8rem; }
+
+
+.article-h1{
+    font-size: size 2rem;
+    margin-bottom:1rem;
+    font-weight:400;
+}

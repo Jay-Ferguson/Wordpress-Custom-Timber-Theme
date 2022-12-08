@@ -44,7 +44,7 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array( 'templates', 'views' );
+Timber::$dirname = array( 'templates', 'views', 'template-parts' );
 
 /**
  * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
@@ -84,7 +84,7 @@ class StarterSite extends Timber\Site {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu('Primary Menu');
-        $context['footer_menu'] = new Timber\Menu('Footer Menu');
+        	$context['footer_menu'] = new Timber\Menu('Footer Menu');
 		$context['site']  = $this;
 		return $context;
 	}

@@ -41,3 +41,8 @@
         font-size: 1.7rem;
     }
 }
+
+.post__content-container{
+    grid-column: 3 / 6;
+    grid-row:2;
+}

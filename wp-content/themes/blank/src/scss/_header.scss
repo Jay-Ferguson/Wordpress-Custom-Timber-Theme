@@ -55,11 +55,13 @@
         grid-column-gap: 3rem;
         justify-items: center;
         align-items: center;
+       
 
         img {
             max-height: 2.5rem;
             max-width: 100%;
             filter: brightness(70%);
+            object-fit:contain;
         }
     }
 }
