@@ -1,6 +1,6 @@
-{% extends "layouts/base.twig" %}
+{% extends "../views/base.twig" %}
 
-{% block content %}
+{% block teammember %}
   <a href="/" class="c-top-link">Home</a>
   <div class="o-layout o-layout--2 c-person">
     <div class="o-layout__item">
@@ -9,7 +9,7 @@
 
     <div class="o-layout__item c-person__info">
       <h1 class="c-person__info__name">{{post.title}}</h1>
-      <h2 class="c-person__info__position">{{TimberTerm(post.realtor).title}}</h2>
+      <h2 class="c-person__info__position">{{TimberTerm(post.team_position).title}}</h2>
       <div class="c-person__info__description">
         {{post.content}}
       </div>
@@ -18,7 +18,7 @@
     <div class="o-layout__item c-person__quote">
       <h2 class="c-person__quote__title">A Grain of Wisdom</h2>
       <blockquote class="c-person__quote__text">
-        <p>{{post.property_description}}</p>
+        <p>{{post.team_quote}}</p>
       </blockquote>
     </div>
 
@@ -31,7 +31,7 @@
         {% endfor %}
         </ul>
       {% else %}
-        <p>Sorry, this person did not write anything.</p>
+        <p>Sorry, no articles are written by this team member</p>
       {% endif %}
 
       <h2 class="c-person__links__title">Interview</h2>
