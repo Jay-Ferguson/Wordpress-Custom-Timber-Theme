@@ -5,7 +5,7 @@
 <div class="about__content-wrapper">
      <article class="post-type-{{ post.post_type }} about__article-wrapper" id="post-{{ post.ID }}">
          <section class="article-content">
-             <p class="about__heading-title">{{ post.post_title }}</p>
+             <p class="heading-title">{{ post.post_title }}</p>
              <img src="{{ post.thumnail.src }}" alt="{{ post.post_alt}}">
              {% if post.thumbnail %}
                 <img src="{{ post.thumbnail.src }}" alt="Thumbnail for {{ post.post_title }}">

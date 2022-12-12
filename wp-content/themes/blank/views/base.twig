@@ -8,17 +8,10 @@
      
 
 <html lang="en">
-
-  <div class="sidebar">
-      <body class="container">
-      <button class="nav-btn" onclick="navOpen()">
-        <span class="nav-button-line"></span>
-        <span class="nav-button-line"></span>
-        <span class="nav-button-line"></span>
-      </button>
-      {# #}
-        {% include 'menu.twig' %}
-    </div>
+<body class="container">
+ {% block sidebar %}
+  {% inlude 'sidebar.twig'%}
+ {% endblock %}
     <section id="content" role="main" class="content-wrapper">
 
 

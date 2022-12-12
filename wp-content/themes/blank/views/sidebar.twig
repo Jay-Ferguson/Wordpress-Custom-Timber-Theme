@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+
+ <div class="sidebar">
+      <button class="nav-btn" onclick="navOpen()">
+        <span class="nav-button-line line-1"></span>
+        <span class="nav-button-line line-2"></span>
+        <span class="nav-button-line line-3"></span>
+      </button>
+      {#includes the menu loop #}
+        {% include 'menu.twig' %}
+
+    </div>

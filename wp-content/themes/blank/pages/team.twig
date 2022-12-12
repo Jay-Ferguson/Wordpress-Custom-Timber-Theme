@@ -1,7 +1,7 @@
 {% extends "/views/base.twig" %}
 
 {% block content %}
-  {% if post.title %}<h1 class="c-team__heading">{{post.title}}</h1>{% endif %}
+  {% if post.title %}<h1 class="c-team__heading heading-title">{{post.title}}</h1>{% endif %}
   {% if team is defined %}
     <ul class="o-layout o-layout--2 c-team">
       {% for member in team %}
