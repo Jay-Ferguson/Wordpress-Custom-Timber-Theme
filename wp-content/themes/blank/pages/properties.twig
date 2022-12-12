@@ -3,36 +3,40 @@
 {% block content %}
 
     <section class="homes">
-
         {% for posts in properties %}
+
             <div class="home">
-                <img src="{{ Image( post.get_field('image').src ) }}" alt="House 1" class="home__img" />
+            {# {{ posts.meta('property_image') }} #}
+                <img src="{{  posts.meta('property_image') }}"  class="home__img" alt="{{ post.title }}" />
+                {# <img src="{{ Image(posts.get_field('property_image').src )  }}"  alt={{ post.title }}/>
+                <img src="{{ Image(posts.get_field('property_image').src )  }}"  alt={{ post.title }}/> #}
+                
                 <svg class="home__like">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">{{ posts.title }}</h5>
                 <div class="home__location">
                     <svg>
-                        <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-map-pin"></use>
                     </svg>
                     <p>{{ posts.city }}</p>
                 </div>
                 <div class="home__rooms">
                     <svg>
-                        <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-profile-male"></use>
                     </svg>
                    
                     <p>{{ posts.room_number }} Rooms</p>
                 </div>
                 <div class="home__area">
                     <svg>
-                        <use xlink:href="img/sprite.svg#icon-expand"></use>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-expand"></use>
                     </svg>
                     <p>{{posts.size}}<sup>2</sup></p>
                 </div>
                 <div class="home__price">
                     <svg>
-                        <use xlink:href="img/sprite.svg#icon-key"></use>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-key"></use>
                     </svg>
                     <p>{{ posts.listed_price }}</p>
                 </div>

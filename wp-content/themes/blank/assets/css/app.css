@@ -47,6 +47,18 @@ body {
   }
 }
 
+.debug {
+  position: absolute;
+  top: 10px;
+  border: 5px solid black;
+  font-size: 1.3rem;
+  background-color: #FFFFFF;
+  width: 80%;
+  padding: 2rem;
+  margin: 2rem;
+  z-index: 500;
+}
+
 p {
   font-size: 1.5rem;
 }
