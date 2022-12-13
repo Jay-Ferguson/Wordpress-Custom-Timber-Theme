@@ -6,7 +6,6 @@
     <ul class="o-layout o-layout--2 c-team">
       {% for member in team %}
         <li class="o-layout__item c-team__item {% if loop.index is divisible by(2) %}c-team__item--reverse{% endif %}">
-          <a href="{{member.link}}" class="c-team__link">
             <h2 class="c-team__title">{{member.title}}</h2>
             <img src="{{member.thumbnail}}" alt="{{member.title}}" class="c-team__image">
           </a>

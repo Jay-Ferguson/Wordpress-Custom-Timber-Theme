@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-
+{% block sidebar %}
  <div class="sidebar">
       <button class="nav-btn" onclick="navOpen()">
         <span class="nav-button-line line-1"></span>
@@ -11,3 +11,5 @@
         {% include 'menu.twig' %}
 
     </div>
+
+    {% endblock %}
