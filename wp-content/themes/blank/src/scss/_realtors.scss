@@ -2,7 +2,6 @@
     background-color: $color-secondary;
     grid-column: col-start 7 / full-end;
     padding: 3rem;
-
     display: grid;
     align-content: center;
     justify-content: center;
@@ -16,8 +15,7 @@
     &__list {
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-column-gap: 2rem;
-        grid-row-gap: 5vh;
+        grid-gap: 5vh;
         align-items: center;
 
         @media only screen and (max-width: $bp-medium) {

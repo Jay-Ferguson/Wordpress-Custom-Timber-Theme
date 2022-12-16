@@ -1,6 +1,7 @@
 {% extends "/views/base.twig" %}
 
 {% block content %}
+
   {% if post.title %}<h1 class="c-team__heading heading-title">{{post.title}}</h1>{% endif %}
   {% if team is defined %}
     <ul class="o-layout o-layout--2 c-team">
@@ -8,9 +9,15 @@
         <li class="o-layout__item c-team__item {% if loop.index is divisible by(2) %}c-team__item--reverse{% endif %}">
             <h2 class="c-team__title">{{member.title}}</h2>
             <img src="{{member.thumbnail}}" alt="{{member.title}}" class="c-team__image">
+             {% if team_member_image is defined %}
+            <img src="{{  Image(posts.meta('team_member_image')).src }}"  class="home__img" alt="{{ post.title }}" />
           </a>
         </li>
       {% endfor %}
     </ul>
   {% endif %}
+  
 {% endblock %}
+
+
+{% %}

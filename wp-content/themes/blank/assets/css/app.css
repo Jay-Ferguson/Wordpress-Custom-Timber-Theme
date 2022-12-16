@@ -23,13 +23,6 @@ body {
   line-height: 1.6;
 }
 
-#content {
-  display: grid;
-  grid-row: 1/-1;
-  grid-column: full-start/full-end;
-  grid-template-columns: [full-start] minmax(0rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-}
-
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
@@ -37,13 +30,18 @@ body {
 }
 @media only screen and (max-width: 62.5em) {
   .container {
-    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 6rem 80vh minmax(min-content, 40vw) repeat(3, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   }
 }
 @media only screen and (max-width: 50em) {
   .container {
-    grid-template-rows: 6rem calc(100vh - 6rem);
+    grid-template-rows: 6rem 80vh minmax(max-content, 80vh);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    grid-template-rows: 6rem 100% minmax(min-content, max-content);
   }
 }
 
@@ -57,6 +55,11 @@ body {
   padding: 2rem;
   margin: 2rem;
   z-index: 500;
+}
+
+.mx-1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 p {
@@ -149,7 +152,7 @@ p {
 .sidebar {
   background-color: #f4af5a;
   grid-column: sidebar-start/sidebar-end;
-  grid-row: 1/-1;
+  grid-row: 1/20;
   display: flex;
   justify-content: center;
 }
@@ -300,8 +303,7 @@ p {
 .realtors__list {
   display: grid;
   grid-template-columns: 25% 75%;
-  grid-column-gap: 2rem;
-  grid-row-gap: 5vh;
+  grid-gap: 5vh;
   align-items: center;
 }
 @media only screen and (max-width: 50em) {
@@ -438,20 +440,23 @@ p {
 
 .homes {
   grid-column: center-start/center-end;
-  margin: 15rem 0;
+  margin: 10rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 7rem;
+  grid-gap: 5rem;
 }
 
 .home {
   background-color: #f9f7f6;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 3.5rem;
+  grid-row-gap: 2rem;
 }
 .home__img {
   width: 100%;
+  height: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   grid-row: 1/2;
   grid-column: 1/-1;
   z-index: 1;
@@ -467,29 +472,34 @@ p {
   margin: 1rem;
 }
 .home__name {
-  grid-row: 1/2;
+  grid-row: 2;
   grid-column: 1/-1;
   justify-self: center;
-  align-self: end;
+  align-self: start;
   z-index: 3;
   width: 80%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   text-align: center;
-  padding: 1.25rem;
+  padding: 1.5rem;
   background-color: #14102c;
-  color: #fff;
+  color: #f9f7f6;
   font-weight: 400;
-  transform: translateY(50%);
+  transform: translateY(5%);
 }
 .home__location, .home__rooms {
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
 }
 .home__location, .home__rooms, .home__area, .home__price {
   font-size: 1.5rem;
-  margin-left: 2rem;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  flex-flow: column;
 }
 .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
   fill: #f4af5a;
@@ -500,7 +510,28 @@ p {
 .home__btn {
   grid-column: 1/-1;
 }
+.home__link {
+  grid-column: 1/-1;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  height: 8rem;
+}
 
+.home__card-title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .home {
+    row-gap: 0rem;
+  }
+}
 .gallery {
   background-color: #f9f7f6;
   grid-column: full-start/full-end;
@@ -578,8 +609,10 @@ p {
 .footer {
   background-color: #14102c;
   grid-column: full-start/full-end;
-  padding: 8rem;
+  padding: 5rem;
   grid-row: 10;
+  margin-top: 10rem;
+  align-self: baseline;
 }
 
 .nav {

@@ -13,4 +13,4 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-Timber::render('pages/about-page-custom.twig', $context);
+Timber::render('pages/about-custom-page.twig', $context);

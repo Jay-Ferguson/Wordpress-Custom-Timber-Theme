@@ -73,7 +73,7 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
-
+		
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {

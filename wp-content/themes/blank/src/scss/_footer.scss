@@ -1,8 +1,10 @@
 .footer {
     background-color: $color-secondary;
     grid-column: full-start / full-end;
-    padding: 8rem;
+    padding: 5rem;
     grid-row:10;
+    margin-top:10rem;
+    align-self: baseline;
 }
 
 .nav {

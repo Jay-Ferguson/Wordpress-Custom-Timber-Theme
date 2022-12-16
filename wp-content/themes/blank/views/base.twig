@@ -2,7 +2,7 @@
 
 {% include 'html-header.twig' %}
 	{% block head %}
-	{% endblock %}
+{% endblock %}
 	</head>
 {% endblock %}
      
@@ -12,21 +12,29 @@
  {% block sidebar %}
   {% include 'sidebar.twig'%}
  {% endblock %}
-    <section id="content" role="main" class="content-wrapper">
 
 
-      {% block content %}
+  {% block content %}
+
+
         
-      {% endblock %}
+  {% endblock %}
 
- 
-    </section>
 
-  <script src="../assets/js/app.js"></script>
 
-   {%  block footer %}
-  {% include 'footer.twig' %}
+
+
+{% block footer %}
+
+    {% include "footer.twig" %}
+
 {% endblock %}
+
+<script src="../assets/js/app.js"></script>
+
+
+
+    
 
 
 </body>

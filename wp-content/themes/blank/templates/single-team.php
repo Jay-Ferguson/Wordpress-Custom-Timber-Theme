@@ -8,15 +8,27 @@
 $context = Timber::get_context();
 
 // Get posts of the associated user
-$user = $context['post']->get_field('team_user');
-if ($user) {
-	$context['user_posts'] = Timber::get_posts(array('author' => $user['ID'], 'post_type' => 'post', 'numberposts' => 3 ));
+
+$team = $context['post']->get_field('team_description');
+if($team){
+	$context['team_description'] = Timber::get_posts(array('realtor' => $team['ID'], 'post_type' => 'post', 'numberposts' => 3));
 }
 
-// Get user's interview
-$interview = $context['post']->get_field('team_interview');
-if ($interview) {
-	$context['interview'] = new TimberPost($interview);
-}
 
-Timber::render( array( 'single-team.twig' ), $context );
+$context = Timber::get_context();
+$context['team_members'] = Timber::get_posts( array( 'post_type' => 'team', 'posts_per_page' => -1 ) );
+
+// Get properties description
+// $team_description = $context['post']->get_field('team_description');
+// if ($interview) {
+// 	$context['team_description'] = new TimberPost($team_description);
+// }
+
+$post = new Timber\Post();
+if (isset($post->team_image) && strlen($post->team_image)){
+	$post->team_image = new Timber\Image($post->team_image);
+}
+$team_image_id = $post->team_image;
+$data = Timber::context();
+$data['post'] = $post;
+Timber::render( array( 'pages/single-team.twig', 'page-' . $timber_post->post_name . '.twig', 'pages/properties.twig'  ), $context );
