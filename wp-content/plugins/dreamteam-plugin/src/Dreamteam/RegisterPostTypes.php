@@ -49,12 +49,12 @@ class RegisterPostTypes {
     register_post_type( 'testimony',
       array(
         'labels' => array(
-          'name'          => __( 'Properties' ),
-          'singular_name' => __( 'Property' ),
-          'all_items'     => __( 'All Property' ),
-          'add_new'       => __( 'Add Property' ),
-          'add_new_item'  => __( 'Add New Property' ),
-          'edit_item'     => __( 'Edit Property' ),
+          'name'          => __( 'testimonies' ),
+          'singular_name' => __( 'testimony' ),
+          'all_items'     => __( 'All testimonies' ),
+          'add_new'       => __( 'Add' ),
+          'add_new_item'  => __( 'Add New Testimony' ),
+          'edit_item'     => __( 'Edit' ),
         ),
         'exclude_from_search' => false,
         'has_archive'         => true,

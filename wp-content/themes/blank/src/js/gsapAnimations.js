@@ -8,11 +8,7 @@ gsap.registerPlugin(Flip, ScrollTrigger, Draggable, Flip);
 const menuBtn = document.querySelector(".menuBtn");
 const exitBtn = document.querySelector(".exit");
 
-console.log(menuBtn);
-console.log('test');
-
-
-let t1 = gsap.timeline({ paused: false });
+let t1 = gsap.timeline({ paused: true });
 
 t1.to(
   ".menu",
@@ -27,12 +23,10 @@ t1.to(
 
 
 menuBtn.addEventListener("click", () => {
-  console.log("click-check");
   t1.play().timeScale(1);
 });
 
 exitBtn.addEventListener("click", () => {
-  console.log("exit-check");
   t1.timeScale(3);
   t1.reverse();
 
