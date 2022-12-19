@@ -1,25 +1,30 @@
 {% extends "/views/base.twig" %}
 
-{% block postsmain %}
+{% block content %}
 {# main content goes here #}
-<div class="about__content-wrapper">
+
      <article class="post-type-{{ post.post_type }} about__article-wrapper" id="post-{{ post.ID }}">
          <section class="article-content">
-             <p class="heading-title">{{ post.post_title }}</p>
+             <p class="heading-title">{{ posts.title }} Test </p>
              <img src="{{ post.thumnail.src }}" alt="{{ post.post_alt}}">
              {% if post.thumbnail %}
                 <img src="{{ post.thumbnail.src }}" alt="Thumbnail for {{ post.post_title }}">
             {% endif %}
              <p class="blog-author">
-                 <span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.post_date|date }}
+                 <span>By</span> {{ post.author.name }} <span>&bull;</span> 
+                 <p>{{ post.post_date|date }}</p>
              </p>
+
+            <p>
              {{ post.content }}
+             </p>
+            
          </section>
 
          <div class="poster">
           <img src="{{ Image(post.poster) }}" alt="{{ Image(post.poster).alt }}" class="poster">
+          <img src="{{ Image(page.featuredImage) }}" alt="{{ Image(post.poster).alt }}" class="poster">
      </div>
      </article>
- </div>
 
 {% endblock %}

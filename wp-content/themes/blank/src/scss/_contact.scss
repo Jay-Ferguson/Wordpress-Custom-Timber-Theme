@@ -15,11 +15,12 @@
 }
 
 .about__article-wrapper {
+     margin:10rem;
      display:flex;
      flex-flow:column;
-     text-align: right;
+     text-align: center;
      gap:.5rem;
-     grid-column: 2;
+     grid-column: full-start / full-end;
      background: $color-grey-light-1;
      color:$color-off-black;
 }
@@ -33,3 +34,49 @@
           margin-bottom:.5rem;
      }
 }
+
+#text-name-label{
+
+}
+
+
+#email-label{
+
+}
+
+
+#subject-label{
+
+}
+
+
+#message-label{
+
+}
+
+
+.wpcf7-submit {
+@extend .btn;
+
+padding:1rem;
+width:15rem;
+
+
+}
+
+input{
+     height:4rem;
+     background-color:#eaeaea;
+     border:none;
+     border-radius:1rem;
+     margin-bottom:1.5rem;
+     padding:10px;
+     font-family: $font-primary;
+}
+
+textarea{
+     @extend input;
+     height:24rem;
+    
+}
+

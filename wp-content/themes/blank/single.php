@@ -14,6 +14,10 @@ if (isset($post->property_image) && strlen($post->property_image)){
 	$post->property_image = new Timber\Image($post->property_image);
 }
 
+if (isset($post->team_member_image) && strlen($post->team_member_image)){
+	$post->team_member_image = new Timber\Image($post->team_member_image);
+}
+
 if (isset($post->hero_image) && strlen($post->hero_image)){
 	$post->hero_image = new Timber\Image($post->hero_image);
 }

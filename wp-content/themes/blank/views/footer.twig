@@ -1,7 +1,6 @@
 {% block footer %}
 
 <footer class="footer">
-  {{ function("wp_footer") }}
   <ul class="nav">
     <li class="nav__item">
       <a href="#" class="nav__link">Find your dream home</a>
@@ -21,6 +20,7 @@
     </li>
   </ul>
   <p class="copyright">&copy; Copyright {{"now"|date('Y')}}</p>
+  
 </footer>
-
+{{ function("wp_footer") }} 
 {% endblock %}

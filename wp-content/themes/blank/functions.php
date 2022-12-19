@@ -68,7 +68,8 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/image', array( $this, 'add_to_image' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		
+		add_action( 'wp_enqueue_scripts', array( $this, 'loadScripts' ) );
+
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -77,9 +78,8 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
-
+		
 	}
-
 	/** This is where you add some context
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
@@ -145,6 +145,9 @@ class StarterSite extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
+
+
+		
 	}
 
 	/** This Would return 'foo bar!'.
@@ -166,6 +169,10 @@ class StarterSite extends Timber\Site {
 		return $twig;
 	}
 
-}
+	function loadScripts(){
+	  wp_enqueue_script( 'app.js', get_template_directory_uri() . '/assets/js/app.js', array(), '1.0.0', true );
+	}
+
+    } 
 
 new StarterSite();

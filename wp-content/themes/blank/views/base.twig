@@ -1,7 +1,9 @@
 {% block html_head_container %}
-
 {% include 'html-header.twig' %}
-	{% block head %}
+
+
+{% block head %}
+
 {% endblock %}
 	</head>
 {% endblock %}
@@ -23,19 +25,14 @@
 
 
 
-
 {% block footer %}
 
     {% include "footer.twig" %}
 
 {% endblock %}
 
-<script src="../assets/js/app.js"></script>
-
-
-
-    
-
+{# {{ add_script() }} #}
+<script src="{{ theme.link }}/assets/js/app.js"/>
 
 </body>
 </html>
