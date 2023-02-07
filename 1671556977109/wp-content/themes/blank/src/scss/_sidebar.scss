@@ -1,0 +1,48 @@
+//variables for nav button toggle
+
+$height-icon: 70px;
+$width-line: 120px;
+$height-line: 2px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+
+
+.sidebar {
+    // grid-column: sidebar-start / sidebar-end;
+    // grid-row: 1 / 20;
+     
+        justify-content: center;
+        display: flex;
+        background-color: $color-primary;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        align-items: center;
+}
+
+.menuBtn {
+    border: none;
+    cursor: pointer;
+    color:black;
+    height: 100%;
+    width: 10rem;
+    margin-right: 2rem;
+    display:flex;
+    flex-flow:column;
+    gap:.5rem;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+
+.menu-text{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color:$color-secondary;
+}
+
+

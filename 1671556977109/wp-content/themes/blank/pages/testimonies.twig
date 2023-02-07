@@ -1,0 +1,37 @@
+{% extends "/views/base.twig" %}
+
+
+{% block content %}
+
+    <section class="homes">
+    
+        {% for posts in testimonies %}
+
+            <div class="home">
+            {# {{ posts.meta('property_image') }} #}
+                <img src="{{  Image(posts.meta('property_image')).src }}"  class="home__img" alt="{{ post.title }}" />
+                <svg class="home__like">
+                    <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+                </svg>
+                <h5 class="home__name">{{ posts.title }}</h5>
+            {# top image section of card #}
+
+
+                <div class="home__location">
+                    <svg>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-map-pin"></use>
+                    </svg>
+
+                    <h3 class="home__card-title"> Location </h3>
+                    <p>{{ posts.client_name }}</p>
+                    <p>{{ posts.client_testimony }}</p>
+                  
+                </div>
+        {% endfor %}
+    
+    </section>
+
+
+
+{% endblock %}
+

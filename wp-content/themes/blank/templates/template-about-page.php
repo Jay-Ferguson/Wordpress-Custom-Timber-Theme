@@ -1,16 +1,16 @@
 <?php
 /**
- * Template Name: About Custom Page
- * Description: A Page Template for the about page.
- *@package Wordpress
- *@subpackage TImber
- *@since Timber
- * 
-*/
+ * Template Name: My Custom Page
+ * Description: A Page Template with a darker design.
+ */
+
 // Code to display Page goes here...
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts(array('post_type' => 'post', 'posts_per_page' => 2));
+$context = Timber::get_post();
 $post = new TimberPost();
+$context['post'] = $post;
+$args = ['posts_per_page' => 3, 'post_type' => 'post'];
 
-Timber::render('pages/about-custom-page.twig', $context);
+
+Timber::render('pages/about-page-my-custom.twig', $context);

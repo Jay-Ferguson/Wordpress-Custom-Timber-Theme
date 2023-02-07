@@ -252,7 +252,7 @@ a, li, ul {
 .header {
   background-color: #54483A;
   grid-column: full-start/col-end 6;
-  background-image: linear-gradient(rgba(20, 16, 44, 0.93), rgba(20, 16, 44, 0.93)), url();
+  background-image: linear-gradient(rgba(20, 16, 44, 0.8), rgba(20, 16, 44, 0.99)), url("http://timberwp.local/wp-content/uploads/2022/12/gal-10.jpeg");
   background-size: cover;
   background-position: center;
   padding: 8rem;
@@ -393,7 +393,7 @@ a, li, ul {
 
 .post__content-container {
   margin-top: 5rem;
-  grid-column: 5/6;
+  grid-column: 4/8;
   grid-row: 2;
 }
 
@@ -762,4 +762,13 @@ input, textarea {
 
 textarea {
   height: 24rem;
+}
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
 }

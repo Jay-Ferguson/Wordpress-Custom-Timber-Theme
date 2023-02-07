@@ -1,0 +1,76 @@
+{% extends "/views/base.twig" %}
+
+
+{% block content %}
+
+    <section class="homes">
+    
+        {% for posts in properties %}
+
+            <div class="home">
+            {# {{ posts.meta('property_image') }} #}
+                <img src="{{  Image(posts.meta('property_image')).src }}"  class="home__img" alt="{{ post.title }}" />
+                <svg class="home__like">
+                    <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+                </svg>
+                <h5 class="home__name">{{ posts.title }}</h5>
+            {# top image section of card #}
+
+
+                <div class="home__location">
+                    <svg>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-map-pin"></use>
+                    </svg>
+
+                    <h3 class="home__card-title"> Location </h3>
+                    <p>{{ posts.city }}</p>
+                  
+                </div>
+
+
+                <div class="home__rooms">
+                    <svg>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-profile-male"></use>
+                    </svg>
+                   <h3 class="home__card-title"> Rooms </h3>
+                    <p> {{ posts.room_number }} </p>
+                </div>
+
+
+                <div class="home__area">
+                    <svg>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-expand"></use>
+                    </svg>
+                     <h3 class="home__card-title">Size</h3>
+                    <p>{{posts.size}} M<sup>2</sup></p>
+                </div>
+
+
+                <div class="home__price">
+                    <svg>
+                        <use xlink:href="../../../uploads/sprite.svg#icon-key"></use>
+                    </svg>
+                    <h3 class="home__card-title">Price</h3>
+                    <p>{{ posts.listed_price }}</p>
+                </div>
+
+
+               
+               
+               
+                  <a href="{{ posts.realtor_contact }}" class="btn home__link"> 
+                    Contact {{ posts.realtor_name }}
+                  </a>
+               
+                
+                
+                
+            </div>
+        {% endfor %}
+    
+    </section>
+
+
+
+{% endblock %}
+

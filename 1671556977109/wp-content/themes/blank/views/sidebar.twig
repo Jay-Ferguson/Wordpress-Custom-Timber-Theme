@@ -1,0 +1,47 @@
+{% block sidebar %}
+
+ <div class="sidebar nav-bar">
+      <button class="menuBtn">
+        <p class="menu-text">
+        Menu
+        </p>
+      </button>
+
+
+      {#includes the menu loop #}
+    </div>
+
+  {# menu logic for rendering submenu items #}
+
+
+<div class="menu">
+<nav class="nav-container">
+
+<div class="nav-bar">
+{# <svg src="http://timberwp.local/wp-content/uploads/exit-thick.svg" alt="exit-incon" class"exit"> #}
+     <svg width="50" height="50" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg" class="exit">
+     <path d="M1.68564 1.62821L94.9314 95" stroke="#f9f7f6" stroke-width="2.5" stroke-linecap="round"/>
+     <path d="M94.9629 1.65974L1.65408 94.9686" stroke="#f9f7f6" stroke-width="2.5" stroke-linecap="round"/>
+     </svg>
+
+</div>
+     <ul class="list-main-nav">
+         {% for item in menu.items %}
+         {% if item.children %}
+          <li class>{{item.title}}
+               {% for child in item.children %}
+               {{child.title}}
+               {% endfor %}
+          </li>
+     {% else %}
+             <li class="nav__main-item {{ item.classes|join(' ') }}">
+                 <a class="nav__main-link" href="{{ item.link }}">{{ item.title }}</a>
+                 <!-- ... -->
+             </li>
+          {% endif %}
+     {% endfor %}
+     </ul>
+   </nav> 
+</div>
+
+{% endblock %}

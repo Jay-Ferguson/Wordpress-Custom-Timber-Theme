@@ -1,0 +1,95 @@
+// COLOR VARIABLES
+$color-primary: #f4af5a;
+$color-primary-dark: #c47b27;
+
+$color-secondary: #14102c;
+$color-secondary-dark: #020c04;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+$color-off-black:#202020;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+$font-hightlight: 'space-grotesk', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 37.5em;    // 600px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+// #content{
+//     display: grid;
+//     grid-row: 1/-1;
+//     grid-column:full-start/full-end;
+//     // grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+//     grid-template-columns: [full-start] minmax(0rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+// }
+
+.container {
+    display: grid;
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:[sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 6rem 80vh minmax(min-content, 40vw) repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 6rem 80vh minmax(max-content, 80vh);
+    }
+}
+
+.debug {
+    position: absolute;
+    top:10px;
+    border:5px solid black;
+    font-size:1.3rem;
+    background-color:#FFFFFF;
+    width:80%;
+    padding:2rem;
+    margin:2rem;
+    z-index:500;
+}
+
+.mx-1{
+    margin-right:0.5rem;
+    margin-left:0.5rem;
+}
+
+.archive__title{
+    position: absolute;
+    left:45%;
+    top:25%;
+    font-size:4rem;
+}

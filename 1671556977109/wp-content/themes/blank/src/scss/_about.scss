@@ -1,0 +1,32 @@
+.about__content-wrapper{
+     display: grid;
+     gap:1rem;
+     padding:1rem;
+
+
+
+
+     @media screen and (max-width:$bp-small) and (max-width:$bp-medium) {
+          grid-template-columns: 1fr;
+          padding:.5rem;
+     }
+}
+
+.about__article-wrapper {
+     display:flex;
+     flex-flow:column;
+     text-align: right;
+     gap:.5rem;
+     grid-column: 2 / 8;
+     background: $color-grey-light-1;
+}
+
+.about__heading-title{
+     font-size:4rem;
+     margin-bottom:1.5rem;
+
+      @media screen and  (max-width:$bp-small) and (max-width:$bp-medium) {
+          font-size:2rem;
+          margin-bottom:.5rem;
+     }
+}
